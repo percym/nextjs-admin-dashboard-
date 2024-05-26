@@ -24,16 +24,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={karla.className}>
-        
-        <SideBar>
-
-        </SideBar>
-        <Header>
-
-        </Header>
-        <PageWrapper>
-        {children}
-        </PageWrapper>
+        <div className="flex">
+          <SideBar>
+          </SideBar>
+          <Header>
+          </Header>
+          <PageWrapper>
+          {children}
+          </PageWrapper>
+        </div>
+      
       </body>
     </html>
   );
