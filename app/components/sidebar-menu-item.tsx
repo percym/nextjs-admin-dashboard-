@@ -20,16 +20,16 @@ const SideBarMenuItem = ({item}:{item:SideNavItem}) => {
     {item.submenu ?
         (
         <div className='rounded-md min-w-[18px] '>
-            <a href=" " className={linkStyles} onClick={toggleSubmenu}>
+            <a className={`${linkStyles} ${pathname.includes(item.path)?activeLinkStyle:''}`}  onClick={toggleSubmenu}>
                 {item.icon}
             <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
             <BsChevronBarRight className='ml-auto stroke-2 text-xs'/>
             </a>
             {subMenuOpen && <div className='bg-[#3e3fx48] border-1-4'>
                 <div className="grid gap-y-2 px-10 leadeing-5">
-                    {item.subMenuItems?.map((subMenuItem,index)=>{
+                    {item.subMenuItems.map((subMenuItem,index)=>{
                         return(
-                            <Link  href={subMenuItem.path} key={index} className={navMenuDropDownItem}>
+                            <Link  href={subMenuItem.path} key={index} className={`${navMenuDropDownItem} ${pathname.includes(subMenuItem.path)?'text-white':''}`} >
                                 <span>{subMenuItem.title}</span>
 
                             </Link>
