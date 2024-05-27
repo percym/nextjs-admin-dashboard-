@@ -2,11 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 import { SIDE_NAV_ITEMS } from '@/SIDEBAR_CONSTANTS'
 import SideBarMenuItem from './sidebar-menu-item'
+import classNames from 'classnames'
 
-const Sidebar = () => {
+const Sidebar = ({toggleCollapse}:{toggleCollapse:boolean}) => {
+ const sidebarClass=classNames('fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]',{
+    ["w-[5rem]"]:toggleCollapse,
+    ["w-[20rem]"]:!toggleCollapse
+ });   
   return (
     <aside 
-    className='fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]'>
+    className={sidebarClass} >
         <div className="flex relative items-center py-5 px-3.5">
         <Image 
             alt='logo' 
