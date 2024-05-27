@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { BsChevronBarRight } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
 
-const SideBarMenuItem = ({item}:{item:SideNavItem}) => {
+const SideBarMenuItem = ({item, toggleCollapse}:{item:SideNavItem, toggleCollapse:boolean}) => {
     const linkStyles='flex items-center min-h[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white';
     const navMenuDropDownItem='text-[#6e768e] py-2 px-4 hover:text-white transition duration-200' 
     const [subMenuOpen,setSubMenuOpen]= useState(false);
@@ -22,8 +22,14 @@ const SideBarMenuItem = ({item}:{item:SideNavItem}) => {
         <div className='rounded-md min-w-[18px] '>
             <a className={`${linkStyles} ${pathname.includes(item.path)?activeLinkStyle:''}`}  onClick={toggleSubmenu}>
                 {item.icon}
-            <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
-            <BsChevronBarRight className='ml-auto stroke-2 text-xs'/>
+                {
+                    !toggleCollapse &&
+                    <>
+                     <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
+                     <BsChevronBarRight className='ml-auto stroke-2 text-xs'/>
+                    </>
+                }
+           
             </a>
             {subMenuOpen && <div className='bg-[#3e3fx48] border-1-4'>
                 <div className="grid gap-y-2 px-10 leadeing-5">
@@ -43,7 +49,7 @@ const SideBarMenuItem = ({item}:{item:SideNavItem}) => {
         (
         <Link href={item.path} className={`${linkStyles}  ${item.path === pathname? activeLinkStyle:''}`} >
             {item.icon}
-            <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
+            {!toggleCollapse && <span className='ml-3 leading-6 font-semibold'>{item.title}</span>}
         </Link>
         )
     }

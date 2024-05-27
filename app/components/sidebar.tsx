@@ -28,7 +28,7 @@ const Sidebar = ({toggleCollapse}:{toggleCollapse:boolean}) => {
             <div className='flex flex-col gap-2 px-2'>
                 {
                     SIDE_NAV_ITEMS.map((item,index)=>{
-                        return <SideBarMenuItem item={item}/>
+                        return <SideBarMenuItem item={item} toggleCollapse={toggleCollapse}/>
                     })
                 }
             </div>
