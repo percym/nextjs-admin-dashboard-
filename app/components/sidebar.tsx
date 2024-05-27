@@ -6,7 +6,7 @@ import classNames from 'classnames'
 
 const Sidebar = ({toggleCollapse}:{toggleCollapse:boolean}) => {
  const sidebarClass=classNames('fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]',{
-    ["w-[5rem]"]:toggleCollapse,
+    ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]:toggleCollapse,
     ["w-[20rem]"]:!toggleCollapse
  });   
   return (
@@ -28,7 +28,7 @@ const Sidebar = ({toggleCollapse}:{toggleCollapse:boolean}) => {
             <div className='flex flex-col gap-2 px-2'>
                 {
                     SIDE_NAV_ITEMS.map((item,index)=>{
-                        return <SideBarMenuItem item={item} toggleCollapse={toggleCollapse}/>
+                        return <SideBarMenuItem item={item} toggleCollapse={toggleCollapse} key={index}/>
                     })
                 }
             </div>

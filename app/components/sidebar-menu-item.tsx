@@ -26,7 +26,7 @@ const SideBarMenuItem = ({item, toggleCollapse}:{item:SideNavItem, toggleCollaps
                     !toggleCollapse &&
                     <>
                      <span className='ml-3 leading-6 font-semibold'>{item.title}</span>
-                     <BsChevronBarRight className='ml-auto stroke-2 text-xs'/>
+                     <BsChevronBarRight className={`${subMenuOpen ?'rotate-90':'ml-auto stroke-2 text-xs'}`}/>
                     </>
                 }
            

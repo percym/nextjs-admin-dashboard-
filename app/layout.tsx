@@ -30,7 +30,7 @@ export default function RootLayout({
             toggleCollapse={toggleCollapse} 
             setToggleCollapse={setToggleCollapse}>
           </Header>
-          <PageWrapper>
+          <PageWrapper toggleCollapse={toggleCollapse}>
           {children}
           </PageWrapper>
         </div>
