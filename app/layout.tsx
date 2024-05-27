@@ -26,7 +26,9 @@ export default function RootLayout({
         <div className="flex">
           <SideBar toggleCollapse={toggleCollapse}>
           </SideBar>
-          <Header>
+          <Header 
+            toggleCollapse={toggleCollapse} 
+            setToggleCollapse={setToggleCollapse}>
           </Header>
           <PageWrapper>
           {children}
