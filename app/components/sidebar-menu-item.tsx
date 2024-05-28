@@ -4,8 +4,10 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { BsChevronBarRight } from 'react-icons/bs';
 import { usePathname } from 'next/navigation';
+import { useSideBarToogle } from '@/hook/use-sidebar-toogle';
 
-const SideBarMenuItem = ({item, toggleCollapse}:{item:SideNavItem, toggleCollapse:boolean}) => {
+const SideBarMenuItem = ({item}:{item:SideNavItem}) => {
+    const {toggleCollapse,invokeCollapse} = useSideBarToogle();
     const linkStyles='flex items-center min-h[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white';
     const navMenuDropDownItem='text-[#6e768e] py-2 px-4 hover:text-white transition duration-200' 
     const [subMenuOpen,setSubMenuOpen]= useState(false);

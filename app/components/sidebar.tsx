@@ -3,9 +3,11 @@ import Image from 'next/image'
 import { SIDE_NAV_ITEMS } from '@/SIDEBAR_CONSTANTS'
 import SideBarMenuItem from './sidebar-menu-item'
 import classNames from 'classnames'
+import { useSideBarToogle } from '@/hook/use-sidebar-toogle'
 
-const Sidebar = ({toggleCollapse}:{toggleCollapse:boolean}) => {
- const sidebarClass=classNames('fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]',{
+const Sidebar = () => {
+    const {toggleCollapse,invokeCollapse} = useSideBarToogle();
+ const sidebarClass=classNames('sidebar overflow-y-auto fixed bg-[#31353d] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]',{
     ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]:toggleCollapse,
     ["w-[20rem]"]:!toggleCollapse
  });   

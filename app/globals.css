@@ -20,8 +20,18 @@ body {
  
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.sidebar{
+  scrollbar-width: thin;
+  scrollbar-color: #999999;
+
+}
+
+.sidebar::-webkit-scrollbar{
+background: transparent;
+width: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+  scrollbar-color: #999990;
+  border-radius: 10px;
 }

@@ -24,13 +24,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={karla.className}>
         <div className="flex">
-          <SideBar toggleCollapse={toggleCollapse}>
+          <SideBar>
           </SideBar>
-          <Header 
-            toggleCollapse={toggleCollapse} 
-            setToggleCollapse={setToggleCollapse}>
+          <Header>
           </Header>
-          <PageWrapper toggleCollapse={toggleCollapse}>
+          <PageWrapper>
           {children}
           </PageWrapper>
         </div>
