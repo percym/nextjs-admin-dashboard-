@@ -5,9 +5,9 @@ import { useSideBarToogle } from '@/hook/use-sidebar-toogle'
 
 const Header  = () => {
 
-    const {toggleCollapse,invokeCollapse} = useSideBarToogle();
+    const {toggleCollapse,invokeToggleCollapse} = useSideBarToogle();
     const sideBarToggle=()=>{
-        invokeCollapse();
+        invokeToggleCollapse();
     }
   return (
     <header className='fixed bg-[#31353d] w-full z-0 px-4 shadow-sm shadow-slate-500/40 pl-[20rem]'>

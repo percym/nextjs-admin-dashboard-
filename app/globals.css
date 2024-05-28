@@ -22,7 +22,7 @@ body {
 
 .sidebar{
   scrollbar-width: thin;
-  scrollbar-color: #999999;
+  scrollbar-color: #999999 transparent;
 
 }
 

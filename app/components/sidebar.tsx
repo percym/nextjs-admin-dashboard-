@@ -4,6 +4,7 @@ import { SIDE_NAV_ITEMS } from '@/SIDEBAR_CONSTANTS'
 import SideBarMenuItem from './sidebar-menu-item'
 import classNames from 'classnames'
 import { useSideBarToogle } from '@/hook/use-sidebar-toogle'
+import SideBarMenuGroup from './sidebar-menu-group'
 
 const Sidebar = () => {
     const {toggleCollapse,invokeCollapse} = useSideBarToogle();
@@ -30,7 +31,7 @@ const Sidebar = () => {
             <div className='flex flex-col gap-2 px-2'>
                 {
                     SIDE_NAV_ITEMS.map((item,index)=>{
-                        return <SideBarMenuItem item={item} toggleCollapse={toggleCollapse} key={index}/>
+                        return <SideBarMenuGroup menuGroup={item}  key={index}/>
                     })
                 }
             </div>

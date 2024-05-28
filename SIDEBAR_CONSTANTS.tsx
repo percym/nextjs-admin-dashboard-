@@ -1,12 +1,20 @@
 import { BsEnvelope, BsEnvelopeArrowDown, BsGear, BsHouseDoor, BsKanban, BsList, BsListCheck, BsQuestionCircle } from "react-icons/bs";
-import { SideNavItem } from "./types/types";
+import { SideNavItem, SideNavItemGroup } from "./types/types";
 
-export const SIDE_NAV_ITEMS:SideNavItem[]=[
+export const SIDE_NAV_ITEMS:SideNavItemGroup[]=[
     {
-        title:"Dashbord",
-        path:"/",
-        icon:<BsHouseDoor size={20} />
+        title:"Dashboards",
+        menuList:[  {
+            title:"Dashbord",
+            path:"/",
+            icon:<BsHouseDoor size={20} />
+        },]
     },
+
+    {
+        title:"Manage",
+        menuList:[
+              
     {
         title:"Products",
         path:"/produts",
@@ -28,14 +36,24 @@ export const SIDE_NAV_ITEMS:SideNavItem[]=[
         path:"/feedbacks",
         icon:<BsEnvelope size={20}/>,
     },
-    {
-        title:"Account",
-        path:"/account",
-        icon:<BsGear size={20}/>,
+        ]
     },
-    {    
-    title:"Help",
-    path:"/help",
-    icon:<BsQuestionCircle size={20}/>,
-},
+    
+    {
+        title:"Others",
+        menuList:[
+            {
+                title:"Account",
+                path:"/account",
+                icon:<BsGear size={20}/>,
+            },
+            {    
+            title:"Help",
+            path:"/help",
+            icon:<BsQuestionCircle size={20}/>,
+        },
+        ]
+    },
+
+    
 ]
